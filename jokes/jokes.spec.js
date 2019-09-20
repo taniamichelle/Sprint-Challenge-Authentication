@@ -2,9 +2,9 @@ const db = require('../database/dbConfig');
 const request = require('supertest');
 const Jokes = require('../jokes/jokes-router');
 
-describe('jokes', () => {
-    describe('GET /jokes', () => {
-        it('returns 200 OK', () => {
+describe('Jokes', () => {
+    describe('GET /', function () {
+        it('responds with 200', function (done) {
             return request(Jokes)
                 .get('/')
                 .then(res => {
@@ -13,12 +13,11 @@ describe('jokes', () => {
         });
     });
     // describe('GET /jokes', function () {
-    //     it('responds with json', function (done) {
-    //         request(Jokes)
+    //     it('responds with 200', function (done) {
+    //         return request(Jokes)
     //             .get('/jokes')
+    //             .auth('username', 'password')
     //             .set('Accept', 'application/json')
-    //             .expect('Content-Type', /json/)
-    //             .expect(200, done);
     //     });
     // });
 });

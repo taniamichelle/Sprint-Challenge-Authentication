@@ -1,6 +1,8 @@
 const request = require('supertest');
 
 const server = require('./server');
+const Jokes = require('../jokes/jokes-router');
+const Users = require('../auth/users-model');
 
 describe('server', () => {
     describe('GET /', () => {
@@ -21,3 +23,4 @@ describe('server', () => {
         });
     });
 });
+
