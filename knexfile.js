@@ -11,7 +11,6 @@ module.exports = {
   },
   testing: {
     client: 'sqlite3',
-    useNullAsDefault: true,
     connection: {
       filename: './database/test.db3'
     },
@@ -22,11 +21,11 @@ module.exports = {
     seeds: {
       directory: './database/seeds'
     },
-    pool: {
-      afterCreate: (conn, done) => {
-        // runs after a connection is made to the sqlite engine
-        conn.run('PRAGMA foreign_keys = ON', done);
-      },
-    },
+    // pool: {
+    //   afterCreate: (conn, done) => {
+    //     // runs after a connection is made to the sqlite engine
+    //     conn.run('PRAGMA foreign_keys = ON', done);
+    //   },
+    // },
   },
 };
