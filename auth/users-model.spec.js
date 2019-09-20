@@ -19,15 +19,13 @@ describe('users model', () => {
     //     const actual = (findBy('NewTestUser'))
     //     expect(findBy({})) = ({ username: {} });
     // })
-    describe('POST /auth', function () {
-        it('responds with json', function (done) {
+    it('returns JSON', done => {
             request(server)
-                .expect(200)
-                .end(function (err, res) {
-                    if (err) return done(err);
-                    done()
-                })
-        })
-    })
+                .get('/')
+                .then(res => {
+                    expect(res.type).toBe('text/html');
+                    done();
+                });
+    });
 });
 
